@@ -2919,6 +2919,10 @@ react-devtools-core@^2.0.8:
     cross-env "^3.1.4"
     ws "^2.0.3"
 
+react-native-progressbar@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-progressbar/-/react-native-progressbar-1.0.3.tgz#6f44df08724eb5d8c83105a2cb7a4c716c20db38"
+
 react-native@0.43.3:
   version "0.43.3"
   resolved "http://registry.npm.taobao.org/react-native/download/react-native-0.43.3.tgz#4f8e0d8d88827553789c02ef21cbc1afb68474d0"

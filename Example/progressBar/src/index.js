@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Progress from './progress';
+import Progress from 'react-native-progressbar';
 
 class ProgressBar extends React.Component {
 
@@ -29,18 +29,17 @@ class ProgressBar extends React.Component {
 
   _showProgress() {
     this.num = 1;
-    this.refs.progress._show();
+    this.refs.progress.show();
     this._progress();
   }
 
   _progress() {
-    console.log(this.num)
     if(this.num >= 99){
-      this.refs.progress._finish();
+      this.refs.progress.finish();
       return;
     }
     this.num++;
-    this.refs.progress._progress(this.num/100);
+    this.refs.progress.changeProgress(this.num/100);
     setTimeout(()=>{
       this._progress();
     },100)

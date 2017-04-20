@@ -23,6 +23,7 @@ export default class Progress extends React.Component {
 	  };
 
 	  this.timeout = -1;
+	  this.isShow = false;
 	}
 
 	componentDidMount() {
@@ -33,7 +34,9 @@ export default class Progress extends React.Component {
 	  clearTimeout(this.timeout);
 	}
 
-	async _show() {
+	async show() {
+		if( this.isShow ) return;
+		this.isShow = true;
 		await this.setState({
 		  modalVisible: true,
 		});
@@ -44,11 +47,11 @@ export default class Progress extends React.Component {
 		}).start();
 	}
 
-	_progress(num) {
+	changeProgress(num) {
 		this.state.width.setValue(num*100);
 	}
 
-	async _finish() {
+	async finish() {
 		await this.state.width.setValue(100);
 		this.timeout = setTimeout(() => {
 			this._onRequestClose();
@@ -59,6 +62,7 @@ export default class Progress extends React.Component {
 		this.setState({
 		  modalVisible: false,
 		},() => {
+			this.isShow = false;
 			this.state.width.setValue(0);
 		});
 	}

@@ -1,7 +1,12 @@
 {
   "name": "react-native-progressbar",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "react-native-progressbar",
+  "repository" :  
+  { 
+  	"type" : "git",
+  	"url" : "https://github.com/wish570225463/react-native-progressbar.git"  
+  },
   "main": "index.js",
   "keywords": [
     "react-native",
