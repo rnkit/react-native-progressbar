@@ -1,0 +1,21 @@
+{
+  "name": "react-native-progressbar",
+  "version": "1.0.0",
+  "description": "react-native-progressbar",
+  "main": "index.js",
+  "keywords": [
+    "react-native",
+    "react-native-progress",
+    "react-native-progressbar",
+    "react-native-progress-bar",
+    "react",
+    "progress",
+    "progressbar",
+    "progress-bar"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wish570225463",
+  "license": "MIT"
+}
