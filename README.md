@@ -29,7 +29,6 @@
  `npm install react-native-progressbar`
  
  * ####yarn
- 
  `yarn add react-native-progressbar`
  
  ## Basic Usage
@@ -40,11 +39,11 @@
  import Progress from 'react-native-progressbar';
  ```
  ```jsx
- this.refs.progress.show();	//显示进度条。
+ this.refs.progress._show();	//显示进度条。
  
- this.refs.progress.changeProgress(per);	//改变进度条进度。per:当前进度所占百分比
+ this.refs.progress._progress(per);	//改变进度条进度。per:当前进度所占百分比
  
- this.refs.progress.finish();	//进度条完成，并隐藏。
+ this.refs.progress._finish();	//进度条完成，并隐藏。
  
  render() {
 	    return (
