@@ -40,10 +40,11 @@ export default class Progress extends React.Component {
 		await this.setState({
 		  modalVisible: true,
 		});
+		this.state.width.setValue(0);
 		Animated.timing(this.state.width,{
-			toValue: 1,
-			duration: 100,
-			delay: 0,
+			toValue: 0,
+			// duration: 100,
+			// delay: 0,
 		}).start();
 	}
 
@@ -51,11 +52,30 @@ export default class Progress extends React.Component {
 		this.state.width.setValue(num*100);
 	}
 
-	async finish() {
-		await this.state.width.setValue(100);
+	finish() {
+		this.state.width.setValue(100);
 		this.timeout = setTimeout(() => {
-			this._onRequestClose();
-		},100);
+			this._close();
+		},500);
+	}
+
+	_close() {
+		this.setState({
+		  modalVisible: false,
+		},() => {
+			this.isShow = false;
+			if(this.props.onFinish){
+				this.props.onFinish();
+			}
+		});
+	}
+
+	hide() {
+		this.setState({
+		  modalVisible: false,
+		},() => {
+			this.isShow = false;
+		});
 	}
 
 	_onRequestClose() {
@@ -63,7 +83,6 @@ export default class Progress extends React.Component {
 		  modalVisible: false,
 		},() => {
 			this.isShow = false;
-			this.state.width.setValue(0);
 		});
 	}
 

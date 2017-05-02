@@ -48,7 +48,7 @@
  
  render() {
 	    return (
-	        <Progress ref={'progress'} title={'正在下载'}/>
+	        <Progress ref={'progress'} title={'正在下载'} onFinish={() => {console.log('完成')}}/>
 	    );
   }
  
@@ -59,6 +59,7 @@
  | Key | Type | Default | Description |
  | --- | --- | --- | --- |
  | title | string | '进度' |提示文字。|
+ | onFinish | function |  |进度条完成之后的回调|
   
  ## Contribution
  
